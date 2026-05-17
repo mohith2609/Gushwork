@@ -3,6 +3,7 @@ import { $, $$ } from "./dom.js";
 export function setupModals() {
   const modals = $$(".dialog-backdrop");
 
+  // Modals share the same open/close behavior for quote and catalogue actions.
   const close = (modal) => {
     modal.classList.remove("is-open");
     modal.setAttribute("aria-hidden", "true");

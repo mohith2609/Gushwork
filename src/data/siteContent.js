@@ -1,5 +1,6 @@
 const ASSET = "/site-assets";
 
+// Shared asset paths used by the template sections.
 export const assets = {
   logo: `${ASSET}/brand/mangalam-logo.png`,
   navChevron: `${ASSET}/brand/nav-chevron.svg`,
@@ -28,12 +29,14 @@ export const assets = {
   featureLife: `${ASSET}/feature-long-life.jpg`,
 };
 
+// Reused process-card copy keeps each step aligned with the Figma content.
 const processCopy = {
   title: "High-Grade Raw Material Selection",
   text: "Vacuum sizing tanks ensure precise outer diameter while internal pressure maintains perfect roundness and wall thickness uniformity.",
   points: ["PE100 grade material", "Optimal molecular weight distribution"],
 };
 
+// Main page copy and section data. Templates read from here instead of hard-coding text.
 export const siteContent = {
   nav: {
     links: ["About Us"],

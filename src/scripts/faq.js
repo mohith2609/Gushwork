@@ -8,6 +8,7 @@ export function setupFaqList() {
     const button = $(".question-toggle", item);
     if (!button) return;
 
+    // Keep the first answer open by default, matching the designed accordion state.
     if (index === 0) {
       item.classList.add("active");
       button.setAttribute("aria-expanded", "true");

@@ -8,6 +8,7 @@ function productFromPath(pathname) {
 }
 
 export function setupProductRoutes() {
+  // Product menu links update the breadcrumb and URL without forcing a page reload.
   updateProductLabel(productFromPath(window.location.pathname)?.label || defaultProductName);
 
   document.addEventListener("click", (event) => {

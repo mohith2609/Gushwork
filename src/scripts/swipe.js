@@ -25,6 +25,7 @@ export function addSwipe(element, handlers) {
       const isHorizontal = Math.abs(deltaX) > Math.abs(deltaY);
       const isQuickEnough = Date.now() - startedAt < 450;
 
+      // Ignore slow drags and vertical scrolls so page scrolling stays natural.
       if (!isHorizontal || !isQuickEnough || Math.abs(deltaX) < 45) return;
       if (deltaX < 0) handlers.onLeft?.();
       if (deltaX > 0) handlers.onRight?.();

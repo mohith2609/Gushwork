@@ -9,6 +9,7 @@ export function setupStickyHeader() {
   let lastScrollY = window.scrollY;
   let scrollEndTimer = null;
 
+  // The sticky copy appears only after the first product area has passed.
   const setVisible = (nextState) => {
     if (nextState === isVisible) return;
     isVisible = nextState;
@@ -18,6 +19,7 @@ export function setupStickyHeader() {
 
   const isPastFirstFold = () => fold.getBoundingClientRect().bottom <= 72;
 
+  // A short delay avoids flicker when the user changes scroll direction quickly.
   const showAfterScrollStops = () => {
     window.clearTimeout(scrollEndTimer);
     scrollEndTimer = window.setTimeout(() => {
@@ -60,6 +62,7 @@ function getStickyHeader() {
   const siteHeader = $("#siteHeader");
   if (!siteHeader) return null;
 
+  // Cloning keeps the original header in the layout while the sticky one animates in.
   const clone = siteHeader.cloneNode(true);
   clone.id = "stickySiteHeader";
   clone.classList.add("site-header--sticky-copy");

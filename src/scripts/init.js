@@ -8,6 +8,7 @@ import { setupProductRoutes } from "./productRoutes.js";
 import { setupMobileProcessCarousel, setupProcessTabs } from "./process.js";
 import { setupStickyHeader } from "./stickyHeader.js";
 
+// All interactive sections are initialized from here after the page template is rendered.
 export function initPageInteractions() {
   setupStickyHeader();
   setupProductRoutes();

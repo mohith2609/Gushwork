@@ -6,6 +6,7 @@ export function setupCatalogueForm() {
   if (!input || !button) return;
 
   const submit = () => {
+    // Basic front-end validation is enough here because the form is a static demo.
     const email = input.value.trim();
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       input.focus();
@@ -31,6 +32,7 @@ export function setupCatalogueForm() {
 }
 
 export function setupSimpleActions() {
+  // Lightweight placeholders keep non-submission buttons responsive in the demo.
   $$(".learn-more-button").forEach((button) => {
     button.addEventListener("click", () => {
       const title = $("h3", button.closest(".solution-card"))?.textContent?.trim();

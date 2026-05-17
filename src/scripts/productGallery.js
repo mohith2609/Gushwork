@@ -10,6 +10,7 @@ export function setupProductGallery() {
   let activeIndex = Math.max(0, thumbs.findIndex((thumb) => thumb.classList.contains("active")));
 
   const showImage = (index) => {
+    // Wrap around so the arrows can cycle through the gallery continuously.
     activeIndex = (index + thumbs.length) % thumbs.length;
     thumbs.forEach((thumb, thumbIndex) => thumb.classList.toggle("active", thumbIndex === activeIndex));
     image.src = thumbs[activeIndex].src;
@@ -29,6 +30,7 @@ export function setupImageZoom() {
 
   area.addEventListener("mousemove", (event) => {
     const bounds = area.getBoundingClientRect();
+    // Cursor position becomes the focal point for the enlarged preview.
     const x = ((event.clientX - bounds.left) / bounds.width) * 100;
     const y = ((event.clientY - bounds.top) / bounds.height) * 100;
 

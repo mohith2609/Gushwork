@@ -12,6 +12,7 @@ import { footerTemplate } from "./footer.js";
 import { modalsTemplate } from "./modals.js";
 
 export function renderPage() {
+  // Section order follows the Figma flow from the product area down to the footer.
   return `
     ${headerTemplate()}
     <main>

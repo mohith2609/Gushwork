@@ -5,6 +5,7 @@ export function setupLogoCount() {
   if (logos.length === 0) return;
 
   const update = () => {
+    // The logo strip shows fewer partners as the available width gets tighter.
     const width = window.innerWidth;
     const visibleCount = width >= 1240 ? 6 : width >= 1000 ? 5 : width >= 550 ? 4 : 3;
     logos.forEach((logo, index) => {
@@ -27,6 +28,7 @@ export function setupApplicationsCarousel() {
   let index = 0;
 
   const cardStep = () => {
+    // Use the live card width so the slider stays correct across breakpoints.
     const gap = Number.parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap) || 0;
     return cards[0].getBoundingClientRect().width + gap;
   };
@@ -65,6 +67,7 @@ export function setupDraggableTestimonials() {
   let startScroll = 0;
   let dragging = false;
 
+  // Testimonials behave like a horizontal strip that can be dragged by mouse or touch.
   const start = (x) => {
     dragging = true;
     startX = x;

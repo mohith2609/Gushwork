@@ -8,6 +8,7 @@ export function setupProcessTabs() {
 
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
+      // Desktop process view swaps one detail panel at a time.
       buttons.forEach((entry) => entry.classList.remove("active"));
       panels.forEach((panel) => panel.classList.remove("active"));
       button.classList.add("active");
@@ -29,6 +30,7 @@ export function setupMobileProcessCarousel() {
   let isMoving = false;
 
   const render = (direction = 1) => {
+    // Mobile uses stacked slides so only the active step affects the card height.
     slides.forEach((slide, slideIndex) => {
       slide.classList.toggle("active", slideIndex === index);
       slide.style.transform = slideIndex === index ? "translateX(0)" : `translateX(${direction > 0 ? "100%" : "-100%"})`;
