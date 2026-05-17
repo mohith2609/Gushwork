@@ -1,0 +1,13 @@
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="10" cy="10" r="9.5" fill="white" stroke="#E5E7EB"/>
+  <clipPath id="flag-clip">
+    <circle cx="10" cy="10" r="8.5"/>
+  </clipPath>
+  <g clip-path="url(#flag-clip)">
+    <path d="M1.5 2H18.5V8H1.5V2Z" fill="#FF9933"/>
+    <path d="M1.5 8H18.5V12H1.5V8Z" fill="white"/>
+    <path d="M1.5 12H18.5V18H1.5V12Z" fill="#138808"/>
+    <circle cx="10" cy="10" r="1.45" stroke="#000080" stroke-width=".55"/>
+    <path d="M10 8.4V11.6M8.4 10H11.6M8.9 8.9L11.1 11.1M11.1 8.9L8.9 11.1" stroke="#000080" stroke-width=".3" stroke-linecap="round"/>
+  </g>
+</svg>
